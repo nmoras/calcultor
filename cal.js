@@ -19,6 +19,7 @@ tableEl.onclick = function(event) {
   };
 
 function reset(){
+        console.log('i am reset')
         numericOne = '';
         numericTwo = '';
         arithmaticOp = '';
@@ -27,8 +28,11 @@ function reset(){
   }
 
 function inputNum(inputId){
+    if(sum){
+        reset();
+    }
     let userInput = inputId;
-    // console.log(userInput);
+    console.log(userInput);
     if( userInput == 'add' || userInput == 'multiply' || userInput == 'devide' || userInput == 'minus'){
         arithmaticOp = userInput;  
         if( arithmaticOp == 'add'){
@@ -61,7 +65,7 @@ function inputNum(inputId){
             return;
         }  else{
             displayEl.textContent= 'Error'; 
-            setTimeout( reset(), 10000);
+            setTimeout( reset, 3000);
             return;
         } 
     } 
@@ -77,7 +81,7 @@ function inputNum(inputId){
     }else{
         let userSecondInput = inputId;
         numericTwo = numericTwo + userSecondInput;
-        // console.log('second numeric', numericTwo);
+        console.log('second numeric', numericTwo);
         displayEl.textContent='';
         displayEl.textContent=numericTwo; 
     }        
@@ -100,8 +104,7 @@ function finalSum(x, y, z) {
     if( x== 'minus'){
         sum = firstDigit - secondDigit;
     }
-    // console.log(sum);
+    console.log(sum);
     displayEl.textContent='';
     displayEl.textContent=sum; 
-    reset();
 }
