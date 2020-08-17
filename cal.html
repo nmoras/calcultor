@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcultor</title>
+    <style>
+        .container{
+            width: 600px;
+            margin: 0 auto;
+        }
+        .calsection{
+            border: 1px solid black;
+            width: 200px;
+            margin: 0 auto;
+            cursor:pointer;
+            background-color: black;
+            box-shadow: 3px 3px #888888;
+        }
+        .cal{
+            margin: 0 auto;   
+            width: 160px;
+        }
+        .display{
+            height: 40px;
+            border: 2px solid black;
+            text-align: end;
+            font-size: larger;
+            padding-top: 10px;
+            padding-right: 10px;
+            background-color: white;
+        }
+        .num, .operator, .cancel{
+            color: white;
+            padding: 10px;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="calsection">
+            <div class="cal">
+                <div class="display"></div>
+                <table id="table">
+                    <tr class="rowOne" style="height:40px">
+                        <td class="num" id="1" style="width:40px">1</td>
+                        <td class="num" id="2" style="width:40px">2</td>
+                        <td class="num" id="3" style="width:40px">3</td>
+                        <td class="operator" id="add" style="width:40px">+</td>
+                    </tr>
+                
+                
+                    <tr class="rowTwo" style="height:40px">
+                        <td class="num" id="4" style="width:40px">4</td>
+                        <td class="num" id="5" style="width:40px">5</td>
+                        <td class="num" id="6" style="width:40px">6</td>
+                        <td class="operator"  id="minus" style="width:40px">-</td>
+                    </tr>
+                    
+                    <tr class="rowThree" style="height:40px">
+                        <td class="num" id="7" style="width:40px">7</td>
+                        <td class="num" id="8" style="width:40px">8</td>
+                        <td class="num" id="9" style="width:40px">9</td>
+                        <td class="operator" id="multiply" style="width:40px">*</td>
+                    </tr>
+                    
+                    <tr class="rowThree">
+                        <td class="num" id="0">0</td>
+                        <td class="num" id='equal'>=</td>
+                        <td class="cancel" id="cancel" >CE</td>
+                        <td class="operator" id="devide">/</td>
+                    </tr>    
+                </table>
+
+            </div>
+
+        </div>
+    </div>
+
+<script src='cal.js'></script>  
+</body>
+</html>
