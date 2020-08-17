@@ -18,6 +18,14 @@ tableEl.onclick = function(event) {
     
   };
 
+function reset(){
+        numericOne = '';
+        numericTwo = '';
+        arithmaticOp = '';
+        sum = '';
+        displayEl.textContent='';
+  }
+
 function inputNum(inputId){
     let userInput = inputId;
     // console.log(userInput);
@@ -51,25 +59,25 @@ function inputNum(inputId){
         if( arithmaticOp && numericOne && numericTwo){
             finalSum(arithmaticOp, numericOne, numericTwo);
             return;
-        }  
+        }  else{
+            displayEl.textContent= 'Error'; 
+            setTimeout( reset(), 10000);
+            return;
+        } 
     } 
     if( userInput == 'cancel'){
-        numericOne = '';
-        numericTwo = '';
-        arithmaticOp;
-        sum = '';
-        displayEl.textContent='';
+        reset();
         return;
     }
     if( !arithmaticOp){
         numericOne = numericOne + userInput;
-        // console.log('numericOne', numericOne)
+        console.log('numericOne', numericOne)
         displayEl.textContent='';
         displayEl.textContent=numericOne; 
     }else{
         let userSecondInput = inputId;
         numericTwo = numericTwo + userSecondInput;
-        // console.log('second numeric - two and above', numericTwo);
+        // console.log('second numeric', numericTwo);
         displayEl.textContent='';
         displayEl.textContent=numericTwo; 
     }        
@@ -95,9 +103,5 @@ function finalSum(x, y, z) {
     // console.log(sum);
     displayEl.textContent='';
     displayEl.textContent=sum; 
-    numericOne = '';
-    numericTwo = '';
-    arithmaticOp = '';
-    sum = '';
-    return;
+    reset();
 }
